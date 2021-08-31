@@ -41,12 +41,10 @@ body {
     transform: translateX(-50%);
     width: 450px;
     height: 660px;
-    display: flex;
-    justify-content: end;
-    flex-direction: column;
     background-color: white;
     padding: 3rem;
     border-radius: 13px;
+    padding-top: 250px;
 }
 
 .illustration {
@@ -70,12 +68,8 @@ h1 {
 }
 
 .inner-grid {
-    display: inline-grid;
-    grid-template-columns: 100px 1fr 120px;
-    grid-template-areas: 
-    "icon annual-plan change"
-    "icon yearly-price change";
-    align-items: center;
+    display: flex;
+    justify-content: space-between;
     height: 100px;
     background-color: var(--very-pale-blue);
     margin-top: 20px;
@@ -84,37 +78,31 @@ h1 {
 }
 
 .icon {
-    grid-area: icon;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 10px;
 }
 
 .annual-plan {
-    grid-area: annual-plan;
     font-weight: 700;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 8px;
+    margin: auto 0;
 }
 
 .yearly-price {
-    grid-area: yearly-price;
     color: var(--desaturated-blue);
-    margin-top: 5px;
     font-weight: initial;
 }
 
 .change {
-    grid-area: change;
     color: var(--bright-blue);
     font-size: 0.9em;
     font-weight: 700;
-    display: flex;
-    justify-content: end;
     margin-right: 10px;
+    align-self: center;
 }
 
 .btn {
