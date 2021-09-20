@@ -10,6 +10,10 @@
     --main-font: 'Red Hat Display', sans-serif;
 }
 
+/* 
+Desktop first 
+*/
+
 * {
     font-family: var(--main-font);
     padding: 0;
@@ -21,7 +25,6 @@
 body {
     position: relative;
     background-color: var(--pale-blue);
-    height: 100vh;
 }
 
 .background-svg {
@@ -36,15 +39,17 @@ body {
 .container {
     position: absolute;
     top: 50px;
+    bottom: 50px;
     transform: translateY(50%);
     left: 50%;
     transform: translateX(-50%);
-    width: 450px;
-    height: 85%;
+    width: 80%;
+    max-width: 450px;
+    height: 625px;
     background-color: white;
-    padding: 3rem;
+    padding: 2.5rem;
     border-radius: 13px;
-    padding-top: 250px;
+    padding-top: 250px; /* pushes content under illustration */
 }
 
 .illustration {
@@ -53,18 +58,21 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
 }
 
 h1 {
     font-size: 1.7em;
     font-weight: 900;
-    top: 50px;
+    top: 0;
     color: var(--dark-blue);
 }
 
 .container > p {
     margin-top: 15px;
+    padding: 0 2rem;
     color: var(--desaturated-blue);
+
 }
 
 .inner-grid {
@@ -73,7 +81,7 @@ h1 {
     height: 80px;
     background-color: var(--very-pale-blue);
     margin-top: 20px;
-    padding: 15px;
+    padding: 1%;
     border-radius: 10px;
 }
 
@@ -82,7 +90,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 10px;
+    padding-left: 2%;
 }
 
 .annual-plan {
@@ -105,13 +113,13 @@ h1 {
     color: var(--bright-blue);
     font-size: 0.9em;
     font-weight: 700;
-    margin-right: 10px;
+    margin-right: 15px;
     align-self: center;
 }
 
 .change:active {
     text-decoration: none;
-    color: var(--desaturated-blue);
+    color: hsla(245, 75%, 52%, 70%);
 }
 
 .btn {
@@ -135,6 +143,7 @@ h1 {
 }
 
 .cancel-order {
+    position: relative;
     margin-top: 30px;
     cursor: pointer;
     color: var(--desaturated-blue);
@@ -157,4 +166,28 @@ h1 {
 
 .attribution a {
     color: hsl(228, 45%, 44%); 
+}
+
+@media (max-width: 750px) {
+    .container {
+        top: 60px;
+        width: 320px;
+        height: 575px;
+        padding: 200px 1.5em 0;
+    }
+
+    .container > p {
+        padding: 0;
+    }
+
+    .annual-plan {
+        font-size: .8em;
+        padding-left: 40px;
+    }
+
+    .illustration {
+        width: 100%;
+        height: auto;
+        top: 0;
+    }
 }
